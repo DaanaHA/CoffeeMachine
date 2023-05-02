@@ -23,6 +23,16 @@ public class BeansContainer extends Container{
     public String getInfo() {
         return "Capacity: " + this.getCapacity() + "\nLevel: " + this.getLevel() + "\nRatio: " + this.ratio;
     }
+
+    @Override
+    public void fill(double amount) {
+        super.fill(amount); 
+    }
+
+    @Override
+    public void drain(double amount) {
+        super.drain(amount); 
+    }
     
     
    
