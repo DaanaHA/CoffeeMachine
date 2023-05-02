@@ -13,6 +13,17 @@ public class WaterContainer extends Container{
     public String getInfo() {
         return "Capacity: " + this.getCapacity() + "\nLevel: " + this.getLevel();
     }
+
+    @Override
+    public void fill(double amount) {
+        super.fill(amount); 
+    }
+
+    @Override
+    public void drain(double amount) {
+        super.drain(amount); 
+    }
+    
     
     
      

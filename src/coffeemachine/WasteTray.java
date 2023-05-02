@@ -1,35 +1,40 @@
 package coffeemachine;
 
-public class WasteTray {
-    private double capacity;
-    private double level;
+public class WasteTray extends Container{
+
+    public WasteTray(Double capacity, Double level) {
+        super(capacity, level);
+    }
 
     public WasteTray() {
+        setCapacity(500.0);
+        setLevel(0.0);
     }
 
-    public WasteTray(double capacity, double level) {
-        this.capacity = capacity;
-        this.level = level;
+    @Override
+    public void setLevel(Double level) {
+        super.setLevel(level); 
     }
 
-    public double getCapacity() {
-        return capacity;
+    @Override
+    public Double getLevel() {
+        return super.getLevel(); 
     }
 
-    public void setCapacity(double capacity) {
-        this.capacity = capacity;
+    @Override
+    public void setCapacity(Double capacity) {
+        super.setCapacity(capacity); 
     }
 
-    public double getLevel() {
-        return level;
+    @Override
+    public Double getCapacity() {
+        return super.getCapacity(); 
     }
-
-    public void setLevel(double level) {
-        this.level = level;
-    }
+ 
 
     public void clean() {
-        
+        if (getLevel()==200)
+            setLevel(0.0);
     }
     
     public String getInfo() {

@@ -4,6 +4,7 @@ public class Grender {
     private int level;
 
     public Grender() {
+        
     }
 
     public Grender(int level) {
@@ -19,6 +20,7 @@ public class Grender {
     }
 
     public void grind(int level) {
+        
         
     }
     
