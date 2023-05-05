@@ -15,18 +15,8 @@ public class WaterContainer extends Container{
     }
 
     @Override
-    public void fill(double amount) {
-        super.fill(amount); 
+    public void drain(int choice, double amount) {
+        super.drain(choice, amount); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void drain(double amount) {
-        super.drain(amount); 
-    }
-    
-    
-    
-     
-    
-     
 }

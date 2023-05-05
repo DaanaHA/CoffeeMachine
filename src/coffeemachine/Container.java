@@ -1,6 +1,6 @@
 package coffeemachine;
 
-public class Container {
+public abstract class Container {
     private double capacity;
     private double level;
 
@@ -31,21 +31,12 @@ public class Container {
         this.level = level;
     }
     
-    public void drain(double amount){
-    if(level!=0)
-        level=level-amount;
-    else System.out.println("Fill The Container");
+    public void drain(int choice, double amount){
+        
     }
+    
     public void fill(double amount){
-    if(level==0)
-    {
-        setCapacity(1000.0);
-        setLevel(1000.0);
-        
-        
-    }
-    else 
-        System.out.println("It's Not Empty");
+        this.level=this.capacity;
     }
     
     public String getInfo() {
