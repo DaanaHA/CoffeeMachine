@@ -31,8 +31,8 @@ public abstract class Container {
         this.level = level;
     }
     
-    public void drain(int choice, double amount){
-        
+    public void drain(double amount){
+        this.setLevel(this.getLevel()-amount);
     }
     
     public void fill(double amount){

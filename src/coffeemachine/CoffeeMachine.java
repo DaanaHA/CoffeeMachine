@@ -5,7 +5,7 @@ public class CoffeeMachine {
     private BeansContainer beansContainer;
     private WasteTray wasteTray;
     private Grender grinder;
-    private int counter;
+    private static int counter;
 
     public CoffeeMachine() {
     }
@@ -61,19 +61,31 @@ public class CoffeeMachine {
     public void makeCupOfCoffee(int choice){
         switch (choice) {
             case 1:
-                
+                this.counter++;
+                this.beansContainer.drain(7.0);
+                this.waterContainer.drain(30.0);
+                this.wasteTray.setLevel(this.wasteTray.getLevel()+10);
                 break;
                 
             case 2:
-                
+                this.counter++;
+                this.beansContainer.drain(14.0);
+                this.waterContainer.drain(60.0);
+                this.wasteTray.setLevel(this.wasteTray.getLevel()+20);
                 break;
                 
             case 3:
-                
+                this.counter++;
+                this.beansContainer.drain(7.0);
+                this.waterContainer.drain(170.0);
+                this.wasteTray.setLevel(this.wasteTray.getLevel()+10);
                 break;
                 
             case 4:
-                
+                this.counter++;
+                this.beansContainer.drain(14.0);
+                this.waterContainer.drain(220.0);
+                this.wasteTray.setLevel(this.wasteTray.getLevel()+20);
                 break;
         }
         

@@ -23,13 +23,4 @@ public class BeansContainer extends Container{
     public String getInfo() {
         return "Capacity: " + this.getCapacity() + "\nLevel: " + this.getLevel() + "\nRatio: " + this.ratio;
     }
-
-    @Override
-    public void drain(int choice, double amount) {
-        
-    }
-
-  
-    
-    
 }
