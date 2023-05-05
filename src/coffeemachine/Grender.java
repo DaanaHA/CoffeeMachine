@@ -21,7 +21,6 @@ public class Grender {
 
     public void grind(int level) {
         
-        
     }
     
     public String getInfo() {
