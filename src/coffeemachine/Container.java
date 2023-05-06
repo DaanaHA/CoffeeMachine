@@ -31,8 +31,8 @@ public abstract class Container {
         this.level = level;
     }
     
-    public void drain(double amount){
-        this.level-=amount;
+    public void drain(double amount) throws Exception{
+        
     }
     
     public void fill(double amount){

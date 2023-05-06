@@ -4,13 +4,13 @@ public class CoffeeMachine {
     private WaterContainer waterContainer;
     private BeansContainer beansContainer;
     private WasteTray wasteTray;
-    private Grender grinder;
+    private Grinder grinder;
     private int counter;
 
     public CoffeeMachine() {
     }
     
-    public CoffeeMachine(WaterContainer waterContainer, BeansContainer beansContainer, WasteTray wasteTray, Grender grinder) {
+    public CoffeeMachine(WaterContainer waterContainer, BeansContainer beansContainer, WasteTray wasteTray, Grinder grinder) {
         this.waterContainer = waterContainer;
         this.beansContainer = beansContainer;
         this.wasteTray = wasteTray;
@@ -42,11 +42,11 @@ public class CoffeeMachine {
         this.wasteTray = wasteTray;
     }
 
-    public Grender getGrinder() {
+    public Grinder getGrinder() {
         return grinder;
     }
 
-    public void setGrinder(Grender grinder) {
+    public void setGrinder(Grinder grinder) {
         this.grinder = grinder;
     }
 
@@ -58,49 +58,52 @@ public class CoffeeMachine {
         this.counter = counter;
     }
     
-    public void makeCupOfCoffee(int choice){
+    public void makeCupOfCoffee(int choice) throws Exception{
         switch (choice) {
             case 1:
                 this.counter++;
                 this.beansContainer.drain(7.0);
                 this.waterContainer.drain(30.0);
-                this.wasteTray.setLevel(this.wasteTray.getLevel()+10);
+                this.wasteTray.fill(10.0);
                 break;
                 
             case 2:
                 this.counter++;
                 this.beansContainer.drain(14.0);
                 this.waterContainer.drain(60.0);
-                this.wasteTray.setLevel(this.wasteTray.getLevel()+20);
+                this.wasteTray.fill(20.0);
                 break;
                 
             case 3:
                 this.counter++;
                 this.beansContainer.drain(7.0);
                 this.waterContainer.drain(170.0);
-                this.wasteTray.setLevel(this.wasteTray.getLevel()+10);
+                this.wasteTray.fill(10.0);
                 break;
                 
             case 4:
                 this.counter++;
                 this.beansContainer.drain(14.0);
                 this.waterContainer.drain(220.0);
-                this.wasteTray.setLevel(this.wasteTray.getLevel()+20);
+                this.wasteTray.fill(20.0);
                 break;
         }
         
     }
     
-    public void start() {
-        try {
-            if (this.beansContainer.getLevel()==0) {
-                throw new OutOfBeansException("Fill the beans container, please");
-            }
-        }
-        catch (OutOfBeansException ex) {
-            
+    public void start() throws Exception {
+        
+        if (this.beansContainer.getLevel()==0) {
+            throw new OutOfBeansException("Fill the beans container, please");
         }
         
+        if (this.waterContainer.getLevel()==0) {
+            throw new OutOfWaterException("Fill the water container, please");
+        }
+        
+        if (this.wasteTray.getLevel()==this.wasteTray.getCapacity()) {
+            throw new CleanException("Clean the waste tray, please.");
+        }
     }
     
     

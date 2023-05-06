@@ -20,12 +20,17 @@ public class BeansContainer extends Container{
     }
 
     @Override
-    public void drain(double amount) {
-        super.drain(amount); 
+    public void drain(double amount) throws OutOfBeansException {
+        if (this.getLevel()-amount < 0) {
+            throw new OutOfBeansException("Fill the beans container, please.");
+        }
+        else {
+            this.setLevel(this.getLevel()-amount);
+        }
     }
     
     @Override
     public String getInfo() {
-        return "Capacity: " + this.getCapacity() + "\nLevel: " + this.getLevel() + "\nRatio: " + this.ratio;
+        return "BEANS CONTAINER INFO --> Capacity:" + this.getCapacity() + "   Level:" + this.getLevel() + "   Ratio:" + this.ratio + "%";
     }
 }

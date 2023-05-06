@@ -10,8 +10,8 @@ public class WasteTray {
     }
 
     public WasteTray() {
-        setCapacity(500.0);
-        setLevel(0.0);
+        this.capacity = 500;
+        this.level = 0;
     }
 
     public double getCapacity() {
@@ -35,8 +35,17 @@ public class WasteTray {
         this.level=0.0;
     }
     
+    public void fill(double amount) throws CleanException{
+        if (this.level+amount > this.capacity) {
+            throw new CleanException("Clean the waste tray, please");
+        }
+        else {
+            this.level+=amount;
+        }
+    }
+    
     public String getInfo() {
-        return "Capacity: " + this.getCapacity() + "\nLevel: " + this.getLevel();
+        return "WASTE TRAY INFO --> Capacity:" + this.getCapacity() + "   Level:" + this.getLevel();
     }
     
     
