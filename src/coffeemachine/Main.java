@@ -8,7 +8,7 @@ public class Main {
         
         Scanner scan = new Scanner(System.in);
         BeansContainer b1 = new BeansContainer(250, 250, 57);
-        WaterContainer w1 = new WaterContainer(250, 250);
+        WaterContainer w1 = new WaterContainer(500, 500);
         Grinder g1 = new Grinder(1);
         WasteTray t1 = new WasteTray(100, 0);
         CoffeeMachine c1 = new CoffeeMachine(w1, b1, t1, g1);
@@ -38,6 +38,10 @@ public class Main {
                         System.out.println("Your choice is --Americano double shot--");
                         c1.makeCupOfCoffee(4);
                         break;
+                        
+                    default:
+                        System.out.println("Your choice must be from 1 to 4.");
+                        continue;
                 } 
                 System.out.println("CUP NUMBER:   " + c1.getCounter());
                 System.out.println("COFFEE MACHINE INFO AFTER THIS CUP:");
