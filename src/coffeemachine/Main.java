@@ -39,12 +39,13 @@ public class Main {
                         c1.makeCupOfCoffee(4);
                         break;
                 } 
-                
+                System.out.println("CUP NUMBER:   " + c1.getCounter());
+                System.out.println("COFFEE MACHINE INFO AFTER THIS CUP:");
                 System.out.println(c1.getBeansContainer().getInfo());
                 System.out.println(c1.getWaterContainer().getInfo());
                 System.out.println(c1.getGrinder().getInfo());
                 System.out.println(c1.getWasteTray().getInfo());
-                System.out.println("===================================================================");
+                System.out.println("=====================================================================");
             }
         }
         catch (OutOfBeansException ex) {
