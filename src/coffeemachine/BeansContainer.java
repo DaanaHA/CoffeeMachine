@@ -18,6 +18,11 @@ public class BeansContainer extends Container{
     public void setRatio(double ratio) {
         this.ratio = ratio;
     }
+
+    @Override
+    public void drain(double amount) {
+        super.drain(amount); 
+    }
     
     @Override
     public String getInfo() {

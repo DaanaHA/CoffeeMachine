@@ -32,7 +32,7 @@ public abstract class Container {
     }
     
     public void drain(double amount){
-        this.setLevel(this.getLevel()-amount);
+        this.level-=amount;
     }
     
     public void fill(double amount){

@@ -5,7 +5,7 @@ public class CoffeeMachine {
     private BeansContainer beansContainer;
     private WasteTray wasteTray;
     private Grender grinder;
-    private static int counter;
+    private int counter;
 
     public CoffeeMachine() {
     }
