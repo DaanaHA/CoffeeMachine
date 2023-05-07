@@ -93,6 +93,8 @@ public class CoffeeMachine {
     
     public void start() throws Exception {
         
+        System.out.println("Starting ...");
+        
         if (this.beansContainer.getLevel()==0) {
             throw new OutOfBeansException("Fill the beans container, please");
         }
@@ -106,6 +108,7 @@ public class CoffeeMachine {
         }
     }
     
-    
-     
+    public void stop() {
+        System.out.println("Stopping ...");
+    }
 }

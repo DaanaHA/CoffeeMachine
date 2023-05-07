@@ -18,6 +18,7 @@ public class Main {
             
             while(true) {
                 System.out.println("Menu:\n1.Espresso single shot.\n2.Espresso double shot.\n3.Americano single shot.\n4.Americano double shot.");
+                System.out.println("Enter youe choice, please");
                 switch (scan.nextInt()) {
                     case 1:
                         System.out.println("Your choice is --Espresso single shot--");
