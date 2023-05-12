@@ -11,7 +11,8 @@ public class Main {
         WaterContainer w1 = new WaterContainer(500, 500);
         Grinder g1 = new Grinder(1);
         WasteTray t1 = new WasteTray(100, 0);
-        CoffeeMachine c1 = new CoffeeMachine(w1, b1, t1, g1);
+        FileLogger fw1 = new FileLogger();
+        CoffeeMachine c1 = new CoffeeMachine(w1, b1, t1, g1, fw1);
         
         try{
             c1.start();

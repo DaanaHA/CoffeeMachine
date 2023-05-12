@@ -2,5 +2,5 @@ package coffeemachine;
 
 public interface Logger {
     
-    public void log();
+    public void log(String msg);
 }
