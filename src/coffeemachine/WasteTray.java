@@ -1,5 +1,8 @@
 package coffeemachine;
 
+import com.sun.org.apache.xml.internal.security.c14n.helper.C14nHelper;
+import java.util.Calendar;
+
 public class WasteTray {
     private double capacity;
     private double level;
@@ -29,7 +32,6 @@ public class WasteTray {
     public void setLevel(double level) {
         this.level = level;
     }
-
 
     public void clean() {
         this.level=0.0;

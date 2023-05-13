@@ -35,7 +35,7 @@ public abstract class Container {
         
     }
     
-    public void fill(double amount){
+    public void fill(){
         this.level=this.capacity;
     }
     

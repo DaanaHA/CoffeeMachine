@@ -61,6 +61,14 @@ public class CoffeeMachine {
     public void setCounter(int counter) {
         this.counter = counter;
     }
+
+    public FileLogger getLogger() {
+        return logger;
+    }
+
+    public void setLogger(FileLogger logger) {
+        this.logger = logger;
+    }
     
     Calendar c = Calendar.getInstance();
     
@@ -111,8 +119,6 @@ public class CoffeeMachine {
     
     public void start() throws Exception {
         
-        System.out.println("Starting ...");
-        
         if (this.beansContainer.getLevel()==0) {
             throw new OutOfBeansException("Fill the beans container, please");
         }
@@ -125,12 +131,13 @@ public class CoffeeMachine {
             throw new CleanException("Clean the waste tray, please.");
         }
         
-        this.logger.log("Start at " + c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR) + "--" + c.get(Calendar.HOUR_OF_DAY) 
+        this.logger.log("Started at " + c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR) + "--" + c.get(Calendar.HOUR_OF_DAY) 
                 + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "\n");
     }
     
     public void stop() {
-        System.out.println("Stopping ...");
+        this.logger.log("Stopped at " + c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR) + "--" + c.get(Calendar.HOUR_OF_DAY) 
+                + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "\n");
     }
     
     public double getCoffeine(double gram) {
@@ -138,5 +145,11 @@ public class CoffeeMachine {
         double robustaCaffeine = (gram * (100-this.beansContainer.getRatio()) * 2.45)/10000.0;
         double totalCaffeine = arabicaCaffeine + robustaCaffeine;
         return totalCaffeine;
+    }
+    
+    public String getState() {
+        return "COFFEE MACHINE STATE AFTER THIS CUP:\nBeans Container => " + this.beansContainer.getLevel() + "g of " + this.beansContainer.getCapacity() + "g\nWater Container => " 
+                + this.waterContainer.getLevel() + "ml of " + this.waterContainer.getCapacity() + "ml\nWaste Tray => " + this.wasteTray.getLevel() + "g of " + this.wasteTray.getCapacity()
+                + "g\n\n*****************************************\n\n";
     }
 }
