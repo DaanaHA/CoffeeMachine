@@ -43,22 +43,6 @@
                       <Component id="stopButton" min="-2" pref="82" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="americanoDoubleShotButton" min="-2" pref="174" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="espressoDoubleShotButton" max="32767" attributes="0"/>
-                              <Component id="espressoSingleShotButton" max="32767" attributes="0"/>
-                              <Component id="americanoSingleShotButton" pref="280" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel1" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                      <Component id="makeCoffeeButton" min="-2" pref="111" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="fillBeansButton" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -67,6 +51,22 @@
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="cleanButton" alignment="0" max="32767" attributes="0"/>
                           <Component id="fillWaterButton" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="espressoDoubleShotButton" max="32767" attributes="0"/>
+                              <Component id="espressoSingleShotButton" max="32767" attributes="0"/>
+                              <Component id="americanoSingleShotButton" pref="280" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel1" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
+                          <Component id="americanoDoubleShotButton" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
+                              <Component id="makeCoffeeButton" min="-2" pref="111" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>

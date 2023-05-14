@@ -23,7 +23,7 @@ public class CoffeeMachine implements Serializable{
         this.beansContainer = beansContainer;
         this.wasteTray = wasteTray;
         this.grinder = grinder;
-        this.counter = 0;
+        this.counter = 1;
         this.logger = logger;
     }
     
@@ -80,43 +80,43 @@ public class CoffeeMachine implements Serializable{
     public void makeCupOfCoffee(int choice) throws Exception{
         switch (choice) {
             case 1:
-                this.counter++;
                 this.beansContainer.drain(7.0);
                 this.waterContainer.drain(30.0);
                 this.wasteTray.fill(10.0);
                 this.logger.log(this.counter + "-  " + c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR)  + "--" + c.get(Calendar.HOUR_OF_DAY)
                         + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "  Espresso single shot  " + "Beans:7g  Water:30ml  Ratio(A/R):(" + this.beansContainer.getRatio() 
                         + "/" + (100-this.beansContainer.getRatio()) + ")  Caffeine:" + this.getCoffeine(7.0) + "g.\n");
+                this.counter++;
                 break;
                 
             case 2:
-                this.counter++;
                 this.beansContainer.drain(14.0);
                 this.waterContainer.drain(60.0);
                 this.wasteTray.fill(20.0);
                 this.logger.log(this.counter + "-  " + c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR)  + "--" + c.get(Calendar.HOUR_OF_DAY)
                         + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "  Espresso double shot  " + "Beans:14g  Water:60ml  Ratio(A/R):(" + this.beansContainer.getRatio() 
                         + "/" + (100-this.beansContainer.getRatio()) + ")  Caffeine:" + this.getCoffeine(14.0) + "g.\n");
+                this.counter++;
                 break;
                 
             case 3:
-                this.counter++;
                 this.beansContainer.drain(7.0);
                 this.waterContainer.drain(170.0);
                 this.wasteTray.fill(10.0);
                 this.logger.log(this.counter + "-  " + c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR)  + "--" + c.get(Calendar.HOUR_OF_DAY)
                         + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "  Americano single shot  " + "Beans:7g  Water:170ml  Ratio(A/R):(" + this.beansContainer.getRatio() 
                         + "/" + (100-this.beansContainer.getRatio()) + ")  Caffeine:" + this.getCoffeine(7.0) + "g.\n");
+                this.counter++;
                 break;
                 
             case 4:
-                this.counter++;
                 this.beansContainer.drain(14.0);
                 this.waterContainer.drain(220.0);
                 this.wasteTray.fill(20.0);
                 this.logger.log(this.counter + "-  " + c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR)  + "--" + c.get(Calendar.HOUR_OF_DAY)
                         + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "  Americano double shot  " + "Beans:14g  Water:220ml  Ratio(A/R):(" + this.beansContainer.getRatio() 
                         + "/" + (100-this.beansContainer.getRatio()) + ")  Caffeine:" + this.getCoffeine(7.0) + "g.\n");
+                this.counter++;
                 break;
         }
         
