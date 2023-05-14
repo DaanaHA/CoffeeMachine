@@ -1,6 +1,8 @@
 package coffeemachine;
 
-public abstract class Container {
+import java.io.Serializable;
+
+public abstract class Container implements Serializable{
     private double capacity;
     private double level;
 

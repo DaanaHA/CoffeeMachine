@@ -1,5 +1,7 @@
 package coffeemachine;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -204,6 +206,12 @@ public class GuiMain extends javax.swing.JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         try {
+            FileInputStream fileIn = new FileInputStream("State.ser");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            c1 = (CoffeeMachine) in.readObject();
+            in.close();
+            fileIn.close();
+        
             c1.start();
             espressoSingleShotButton.setEnabled(true);
             espressoDoubleShotButton.setEnabled(true);
@@ -213,14 +221,26 @@ public class GuiMain extends javax.swing.JFrame {
         } 
         catch (OutOfBeansException ex) {
             JOptionPane.showMessageDialog(this, "Something wrong, Fill the beans container, please.");
+            espressoSingleShotButton.setEnabled(false);
+            espressoDoubleShotButton.setEnabled(false);
+            americanoSingleShotButton.setEnabled(false);
+            americanoDoubleShotButton.setEnabled(false);
         }
         
         catch (OutOfWaterException ex) {
             JOptionPane.showMessageDialog(this, "Something wrong, Fill the water container, please.");
+            espressoSingleShotButton.setEnabled(false);
+            espressoDoubleShotButton.setEnabled(false);
+            americanoSingleShotButton.setEnabled(false);
+            americanoDoubleShotButton.setEnabled(false);
         }
         
         catch (CleanException ex) {
             JOptionPane.showMessageDialog(this, "Something wrong, Clean the waste tray, please.");
+            espressoSingleShotButton.setEnabled(false);
+            espressoDoubleShotButton.setEnabled(false);
+            americanoSingleShotButton.setEnabled(false);
+            americanoDoubleShotButton.setEnabled(false);
         }
         
         catch (Exception ex) {
@@ -246,14 +266,26 @@ public class GuiMain extends javax.swing.JFrame {
             }
         } catch (OutOfBeansException ex) {
             JOptionPane.showMessageDialog(this, "Something wrong, Fill the beans container, please.");
+            espressoSingleShotButton.setEnabled(false);
+            espressoDoubleShotButton.setEnabled(false);
+            americanoSingleShotButton.setEnabled(false);
+            americanoDoubleShotButton.setEnabled(false);
         }
         
         catch (OutOfWaterException ex) {
             JOptionPane.showMessageDialog(this, "Something wrong, Fill the water container, please.");
+            espressoSingleShotButton.setEnabled(false);
+            espressoDoubleShotButton.setEnabled(false);
+            americanoSingleShotButton.setEnabled(false);
+            americanoDoubleShotButton.setEnabled(false);
         }
         
         catch (CleanException ex) {
             JOptionPane.showMessageDialog(this, "Something wrong, Clean the waste tray, please.");
+            espressoSingleShotButton.setEnabled(false);
+            espressoDoubleShotButton.setEnabled(false);
+            americanoSingleShotButton.setEnabled(false);
+            americanoDoubleShotButton.setEnabled(false);
         }
         
         catch (Exception ex) {
@@ -274,18 +306,30 @@ public class GuiMain extends javax.swing.JFrame {
         c1.getBeansContainer().fill();
         c1.getLogger().log(c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR)  + "--" + c.get(Calendar.HOUR_OF_DAY)
                         + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "  BEANS CONTAINER FILLED\n");
+        espressoSingleShotButton.setEnabled(true);
+            espressoDoubleShotButton.setEnabled(true);
+            americanoSingleShotButton.setEnabled(true);
+            americanoDoubleShotButton.setEnabled(true);
     }//GEN-LAST:event_fillBeansButtonActionPerformed
 
     private void fillWaterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fillWaterButtonActionPerformed
         c1.getWaterContainer().fill();
         c1.getLogger().log(c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR)  + "--" + c.get(Calendar.HOUR_OF_DAY)
                         + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "  WATER CONTAINER FILLED\n");
+        espressoSingleShotButton.setEnabled(true);
+            espressoDoubleShotButton.setEnabled(true);
+            americanoSingleShotButton.setEnabled(true);
+            americanoDoubleShotButton.setEnabled(true);
     }//GEN-LAST:event_fillWaterButtonActionPerformed
 
     private void cleanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanButtonActionPerformed
         c1.getWasteTray().clean();
         c1.getLogger().log(c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR)  + "--" + c.get(Calendar.HOUR_OF_DAY)
                         + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "  WASTE TARY CLEANED\n");
+        espressoSingleShotButton.setEnabled(true);
+            espressoDoubleShotButton.setEnabled(true);
+            americanoSingleShotButton.setEnabled(true);
+            americanoDoubleShotButton.setEnabled(true);
     }//GEN-LAST:event_cleanButtonActionPerformed
 
     private void espressoDoubleShotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_espressoDoubleShotButtonActionPerformed
@@ -307,7 +351,11 @@ public class GuiMain extends javax.swing.JFrame {
         americanoSingleShotButton.setEnabled(false);
         americanoDoubleShotButton.setEnabled(false);
         startButton.setEnabled(true);
-        c1.stop();
+        try {
+            c1.stop();
+        } catch (Exception ex) {
+            Logger.getLogger(GuiMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_stopButtonActionPerformed
 
     /**

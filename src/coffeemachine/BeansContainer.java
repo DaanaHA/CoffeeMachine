@@ -1,6 +1,8 @@
 package coffeemachine;
 
-public class BeansContainer extends Container{
+import java.io.Serializable;
+
+public class BeansContainer extends Container implements Serializable{
     private double ratio;
 
     public BeansContainer() {

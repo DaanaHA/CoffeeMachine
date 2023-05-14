@@ -1,9 +1,8 @@
 package coffeemachine;
 
-import com.sun.org.apache.xml.internal.security.c14n.helper.C14nHelper;
-import java.util.Calendar;
+import java.io.Serializable;
 
-public class WasteTray {
+public class WasteTray implements Serializable{
     private double capacity;
     private double level;
 

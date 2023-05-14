@@ -1,6 +1,8 @@
 package coffeemachine;
 
-public class Grinder {
+import java.io.Serializable;
+
+public class Grinder implements Serializable{
     private int level;
 
     public Grinder() {

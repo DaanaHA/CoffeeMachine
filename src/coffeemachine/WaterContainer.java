@@ -1,6 +1,8 @@
 package coffeemachine;
 
-public class WaterContainer extends Container{
+import java.io.Serializable;
+
+public class WaterContainer extends Container implements Serializable{
 
     public WaterContainer() {
     }

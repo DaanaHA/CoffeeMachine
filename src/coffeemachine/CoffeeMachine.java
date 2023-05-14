@@ -1,8 +1,13 @@
 package coffeemachine;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class CoffeeMachine {
+public class CoffeeMachine implements Serializable{
     private WaterContainer waterContainer;
     private BeansContainer beansContainer;
     private WasteTray wasteTray;
@@ -135,7 +140,14 @@ public class CoffeeMachine {
                 + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "\n");
     }
     
-    public void stop() {
+    public void stop() throws Exception{
+        
+        FileOutputStream fileOut = new FileOutputStream("State.ser");
+        ObjectOutputStream out = new ObjectOutputStream(fileOut);
+        out.writeObject(this);
+        out.close();
+        fileOut.close();
+        
         this.logger.log("Stopped at " + c.get(Calendar.DAY_OF_MONTH) + "/" + (c.get(Calendar.MONTH)+1) + "/" + c.get(Calendar.YEAR) + "--" + c.get(Calendar.HOUR_OF_DAY) 
                 + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND) + "\n");
     }
