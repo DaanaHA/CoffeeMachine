@@ -6,6 +6,7 @@ public class Main {
     
     public static void main(String[] args) {
         
+        
         Scanner scan = new Scanner(System.in);
         BeansContainer b1 = new BeansContainer(250, 250, 57);
         WaterContainer w1 = new WaterContainer(500, 500);
